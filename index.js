@@ -45,3 +45,16 @@ app.get('/api/html', (req, res) => {
 app.get('/api/jpg', (req, res) => {
     res.sendFile(path.join(__dirname, 'src', '404.jpg'));
 });
+
+
+/** POST */
+
+app.post('/api/post', (req, res) => {
+    const requestData = req.body;
+    console.log('Empfangene Daten:', requestData);
+
+    res.status(201).json({
+        message: 'Daten erfolgreich empfangen!',
+        data: requestData,
+    });
+});
